@@ -8,6 +8,8 @@ permissions:
 
 jobs:
   gitleaks:
+    # INFRA-1218: job del upstream Arvo-AI/aurora; queda skipped en el fork
+    if: github.repository == 'Arvo-AI/aurora'
     runs-on: ubuntu-24.04
     name: gitleaks
     steps:
@@ -27,6 +29,8 @@ jobs:
           gitleaks detect --config .gitleaks.toml --source . --no-git --verbose --exit-code 1
 
   pre-checks:
+    # INFRA-1218: job del upstream Arvo-AI/aurora; queda skipped en el fork
+    if: github.repository == 'Arvo-AI/aurora'
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository

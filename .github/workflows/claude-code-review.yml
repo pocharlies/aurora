@@ -12,6 +12,8 @@ on:
 
 jobs:
   claude-review:
+    # INFRA-1218: job del upstream Arvo-AI/aurora; queda skipped en el fork
+    if: github.repository == 'Arvo-AI/aurora'
     # Optional: Filter by PR author
     # if: |
     #   github.event.pull_request.user.login == 'external-contributor' ||
